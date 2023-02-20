@@ -1,11 +1,8 @@
-# import SQLAlchemy as SQLAlchemy
-# import SQLAlchemy
 from flask import Flask, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
-# import sqlalchemy
-# print(SQLAlchemy.__version__)
-app = Flask(__name__)
 
+
+app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Pieniazek21@localhost/bucketlist'
 mysql = SQLAlchemy(app)

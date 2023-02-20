@@ -1,15 +1,69 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>SEO App - v. 0.1</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <a href="/">Home</a>-->
+<!--    <a href="{{url_for('login')}}">Logowanie</a>-->
+<!--    <a href="{{url_for('register')}}">Rejestracja</a>-->
+<!--    <h1>SEO App - v. 0.1</h1>-->
+<!--    <a href="{{url_for('login')}}">Masz już konto? Zaloguj się.</a>-->
+<!--    <br>-->
+<!--    <a href="{{url_for('register')}}">Nie masz konta? Zarejestruj się.</a>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SEO App - v. 0.1</title>
+    <title>Python Flask Bucket List App</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/jumbotron-narrow.css')}}" rel="stylesheet">
 </head>
 <body>
-    <a href="/">Home</a>
-    <a href="{{url_for('login')}}">Logowanie</a>
-    <a href="{{url_for('register')}}">Rejestracja</a>
-    <h1>SEO App - v. 0.1</h1>
-    <a href="{{url_for('login')}}">Masz już konto? Zaloguj się</a>
-    <a href="{{url_for('register')}}">Nie masz konta? Zarejestruj się.</a>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="/">Home</a>
+                    </li>
+                    <li role="presentation"><a href="/login">Logowanie</a>
+                    </li>
+                    <li role="presentation"><a href="/register">Rejestracja</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">SEO App v. 0.1</h3>
+        </div>
+        <div class="jumbotron">
+            <h1>SEO App v. 0.1</h1>
+            <p class="lead">Ten system jeszcze nie działa. Ale kiedyś będzie.</p>
+            <p><a class="btn btn-lg btn-success" href="#" role="button">API indeksujące</a>
+            </p>
+        </div>
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <h4>Zarządzanie projektami</h4>
+                <p>Wszystkie dane projektu, działania offsite, weryfikacja elementów onsite. Wszystko to dostępne w jednym panelu.</p>
+                <h4>Kontrola indeksowania</h4>
+                <p>Po wpięciu odpowiedniego klucza API można automatycznie weryfikować indeksowanie zasobów nad którymi są prowadzone prace. Sprawdzaj indeksowanie materiałów wewnętrznych i zewnętrznych.</p>
+                <h4>Automatyczne raporty</h4>
+                <p>Pobieraj automatycznie dane z popularnych systemów - SENUTO, Ahrefs, Google Search Console i Analytics.</p>
+            </div>
+            <div class="col-lg-6">
+                <h4>Zarządzanie contentem</h4>
+                <p>Zlecaj treści, monitoruj statusy, zarządzaj rozliczeniami.</p>
+                <h4>Indexing API</h4>
+                <p>Automatycznie zgłaszaj zasoby do indeksowania w Google. Każdy projekt pozwala na bezobsługowe prowadzenie działań indeksujących!</p>
+                <h4>Automatyczne raporty</h4>
+                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>Seowców2 &copy; Company 2023</p>
+        </footer>
+    </div>
 </body>
 </html>
