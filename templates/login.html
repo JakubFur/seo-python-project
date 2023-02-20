@@ -37,6 +37,12 @@
         </div>
         <div class="jumbotron">
             <h1>SEO App v. 0.1</h1>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                {{ form.username }}
+                {{ form.password }}
+                {{ form.submit }}
+            </form>
         </div>
         <footer class="footer">
             <p>Seowców2 &copy; Company 2023</p>
