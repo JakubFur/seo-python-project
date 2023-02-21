@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SEO App - v. 0.1</title>
-</head>
-<body>
-    <a href="/">Home</a>
-    <a href="{{url_for('login')}}">Logowanie</a>
-    <a href="{{url_for('register')}}">Rejestracja</a>
-    <h1>SEO App - v. 0.1</h1>
-    <a href="{{url_for('login')}}">Masz już konto? Zaloguj się</a>
-    <a href="{{url_for('register')}}">Nie masz konta? Zarejestruj się.</a>
-</body>
-</html>
+  <head>
+    <title>Python Flask Bucket List App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/jumbotron-narrow.css') }}" rel="stylesheet">
+    <link src="{{ url_for('static', filename='css/signup.css') }}" rel="stylesheet">
+
+{#    <script src="../static/js/jquery-3.6.3.js"></script>#}
+{#    <script src="../static/js/signUp.js"></script>#}
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+                    <li role="presentation">
+                            <a href="{{url_for('home')}}">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="{{url_for('login')}}">Logowanie</a>
+                    </li></li>
+                    <li role="presentation">
+                        <a href="{{url_for('register')}}">Rejestracja</a>
+                    </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">SEO system v 0.001</h3>
+      </div>
+              <div class="jumbotron">
+            <h1>Bucket List App</h1>
+            <p class="lead"></p>
+            <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sign up today</a>
+            </p>
+        </div>
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <h4>Bucket List</h4>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                <h4>Bucket List</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+                <h4>Bucket List</h4>
+                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+            <div class="col-lg-6">
+                <h4>Bucket List</h4>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+                <h4>Bucket List</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+                <h4>Bucket List</h4>
+                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
+    </div>
