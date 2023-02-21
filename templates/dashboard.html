@@ -21,11 +21,8 @@
                     <li role="presentation">
                             <a href="{{url_for('home')}}">Home</a>
                     </li>
-                    <li role="presentation">
-                        <a href="{{url_for('login')}}">Logowanie</a>
-                    </li></li>
-                    <li role="presentation">
-                        <a href="{{url_for('register')}}">Rejestracja</a>
+                     <li>
+                         <a href={{ url_for('logout')}}>Wyloguj</a>
                     </li>
           </ul>
         </nav>
@@ -33,6 +30,6 @@
       </div>
       <div class="jumbotron">
     <h1>Dashboard</h1>
-<a href={{ url_for('logout')}}>Wyloguj</a>
+          <p> W tym miejscu będą pojawiały się narzędzia SEO.</p>
 </body>
 </html>
