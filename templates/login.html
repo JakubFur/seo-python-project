@@ -33,6 +33,12 @@
       </div>
       <div class="jumbotron">
     <h1>Logowanie</h1>
+          <form method="POST" action="">
+              {{ form.hidden_tag() }}
+              {{ form.username }}
+              {{ form.password }}
+              {{ form.submit }}
+          </form>
     <a href="{{url_for('register')}}">Nie masz konta? Zarejestruj się.</a>
 </body>
 </html>
