@@ -6,10 +6,13 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
 from dashboard import dashboard
+# ????
+from clients import client-db-connection
 
 
 app = Flask(__name__)
 app.register_blueprint(dashboard, ulr_prefix='/dashboard')
+app.register_blueprint(client, url_prefix='/dashboard/client')
 bcrypt = Bcrypt(app)
 
 
