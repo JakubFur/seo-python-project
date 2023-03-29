@@ -1,18 +1,20 @@
 from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
-from dashboard import dashboard
+from dashboard.dashboard import panel
+
 # ????
-from clients import client-db-connection
+# from clients import client-db-connection
 
 
 app = Flask(__name__)
-app.register_blueprint(dashboard, ulr_prefix='/dashboard')
-app.register_blueprint(client, url_prefix='/dashboard/client')
+app.register_blueprint(panel, ulr_prefix='/dashboard')
+# app.register_blueprint(client, url_prefix='/dashboard/client')
+#  app.register_blueprint(add_client, url_prefix="/add-client")
 bcrypt = Bcrypt(app)
 
 
@@ -72,7 +74,7 @@ def login():
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('dashboard.dashboard'))
     return render_template('login.html', form=form)
 
 
