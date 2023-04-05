@@ -1,24 +1,25 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
-from dashboard.dashboard import panel
+# import db_connection
 
-# ????
-# from clients import client-db-connection
+import dashboard.dashboard
+from dashboard.dashboard import panel
+from dashboard.clients.add_new_client import add_client_bp
 
 
 app = Flask(__name__)
 app.register_blueprint(panel, ulr_prefix='/dashboard')
-# app.register_blueprint(client, url_prefix='/dashboard/client')
-#  app.register_blueprint(add_client, url_prefix="/add-client")
+app.register_blueprint(add_client_bp, url_prefix='/add-client')
 bcrypt = Bcrypt(app)
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Pieniazek21@localhost/bucketlist'
+app.config['SQLALCHEMY_TRACK_MODYFICATIONS'] = False
 app.config['SECRET_KEY'] = '1234'
 db = SQLAlchemy(app)
 
@@ -74,7 +75,7 @@ def login():
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
-                return redirect(url_for('dashboard.dashboard'))
+                return redirect('/dashboard')
     return render_template('login.html', form=form)
 
 
@@ -83,6 +84,7 @@ def login():
 def logout():
     """Wylogowanie"""
     logout_user()
+    flash("Wylogowano")
     return redirect(url_for('home'))
 
 
@@ -95,7 +97,9 @@ def register():
         new_user = User(username=form.username.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
+        flash("Zarejestrowano użytkownika")
         return redirect(url_for('login')), 201
+    flash("Nieprawidłowe dane!")
     return render_template('register.html', form=form)
 
 
