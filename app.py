@@ -18,7 +18,7 @@ app.register_blueprint(add_client_bp, url_prefix='/add-client')
 bcrypt = Bcrypt(app)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Pieniazek21@localhost/bucketlist'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://serwer18504_pythonapp:Pieniazek12!@sql26.lh.pl/serwer18504_pythonapp'
 app.config['SQLALCHEMY_TRACK_MODYFICATIONS'] = False
 app.config['SECRET_KEY'] = '1234'
 db = SQLAlchemy(app)
@@ -104,4 +104,4 @@ def register():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80)
+    app.run(debug=True, port=5000)
